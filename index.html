@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator program<</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="res/favicon.ico" type="image/x-icon">
+    <script src="js/math.js"></script>
+  </head>
+  <body style="background-color: #1f1206">
+    <main>
+        <div class="container">
+            <div class="frame">
+              <h1 class="output" id="output">Type your math</h1>
+
+            <div class="buttons">
+                <button type="button" class="button" id="b-1" onclick="addToExpression(1)"> 
+                  1</button>
+                <button type="button" class="button" id="b-2" style="grid-column-start: 2;" onclick="addToExpression(2)">
+                  2</button>
+                <button type="button" class="button" id="b-3" style="grid-column-start: 3;" onclick="addToExpression(3)">
+                  3</button>
+                <button type="button" class="button" id="b-4" style="grid-row-start: 2;" onclick="addToExpression(4)">
+                  4</button>
+                <button type="button" class="button" id="b-5"style="grid-row-start: 2;" onclick="addToExpression(5)">
+                  5</button>
+                <button type="button" class="button" id="b-6"style="grid-row-start: 2;" onclick="addToExpression(6)">
+                  6</button>
+                <button type="button" class="button" id="b-7" style="grid-column-start: 1; grid-row-start: 3;" onclick="addToExpression(7)">
+                  7</button>
+                <button type="button" class="button" id="b-8" style="grid-row-start: 3; grid-column-start: 2;" onclick="addToExpression(8)">
+                  8</button>
+                <button type="button" class="button" id="b-9" onclick="addToExpression(9)">
+                  9</button>
+                <button type="button" class="button" id="b-0" style="grid-row-start: 4; grid-column-start: 2;" onclick="addToExpression(0)">
+                  0</button>
+
+                <button type="button" class="button" id="b-."style="grid-row-start: 4;" onClick="addToExpression('.')">
+                  .</button>
+
+                <button type="button" class="button" id="b-x"style="grid-column-start: 4; background-color: rgb(255, 135, 55);" onclick="addToExpression('x')">
+                  x</button>
+                <button type="button" class="button" id="b--"style="grid-column-start: 4; background-color: rgb(255, 135, 55);" onclick="addToExpression('-')">
+                  -</button>
+                <button type="button" class="button" id="b-+"style="grid-column-start: 4; background-color: rgb(255, 135, 55);" onclick="addToExpression('+')">
+                  +</button>
+                <button type="button" class="button" id="b-="style="grid-column-start: 4; background-color: rgb(255, 135, 55);" onclick="resolveExpression()">
+                  =</button>
+              </div>
+            </div>
+        </div>
+    </main>
+	
+    <script src="math.js"></script>
+  </body>
+</html>
+}

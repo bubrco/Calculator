@@ -1,0 +1,46 @@
+
+.container{
+    margin: auto;
+    width: 340PX;
+    padding-top: 10%;
+}
+
+.calculator{
+    display: grid;
+ 
+}
+.output{
+	color: bisque;
+	text-align:right;
+}
+
+.buttons{
+	grid-template-columns: 100px;
+	display: grid;
+	gap: 4px 10px;
+
+	grid-template-columns: 100px;
+	grid-auto-flow: column;
+	grid-auto-columns: 110px;
+	grid-auto-rows: 70px;
+}
+
+.button{
+	padding: 4px;
+	text-align: center;
+	cursor: pointer;
+	border-style:hidden;
+	background-color: rgb(255, 170, 73);
+
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(61, 53, 48);
+	font-size: 2em;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #333;
+	transition: .2s;
+	&:hover {
+		box-shadow: 2px 2px 2px rgb(218, 120, 55);
+		background-color: rgb(218, 120, 55);
+		color: black;
+	}
+}
