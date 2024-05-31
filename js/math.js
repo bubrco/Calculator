@@ -1,4 +1,4 @@
-var expression = 'Type your math';
+var expression = 0;
 
 function executeOperation(value1, operation, value2){
     switch(operation) {
@@ -23,24 +23,33 @@ function interpretExpression(exp){
     let exprCharArr = exp.split('');
     let result;
     
-    let previousValue, previousChar, storedValue;
+    let previousValue, previousChar = NaN, storedValue;
     let operation = null;
-    let opIndex = 0;
+    let opIndex = 0, signal = 1;
     exprCharArr.forEach((char) => {
-        if(!isNaN(char)){
-            if(!isNaN(previousChar)){
+        if(!isNaN(char)){ // if it is a number
+            if(!isNaN(previousChar)){ // if last char was a number
                 let temp = previousValue.toString().split('');
                 temp.push(char);
-                previousValue = parseInt(temp.toString())
+                previousValue = parseInt(temp.join(''))
+
+                previousChar = char;
                 return;
             }
-            previousValue = parseInt(char)
+            previousValue = parseInt(char) * signal
+            previousChar = char;
+            signal = 1;
+            
             return;
         } 
-        
         storedValue = previousValue;
-let num = 22
-console.log(num.toString().split('').push(3) + ' sores')
+        
+        if(isNaN(previousChar)){ // first character is an operation
+            if(char != '-') return;
+            signal = -1;
+            return;
+        }
+
         if(operation != null){   //reached a digit without finishing operation
             previous = executeOperation(storedValue, operation, previousValue);
             operation = null;
@@ -58,21 +67,20 @@ console.log(num.toString().split('').push(3) + ' sores')
                 operation = '+'
                 break;
         }
-    });
+        previousValue = 0
+        previousChar = char;
+});
 
     if(operation != null)
         result = executeOperation(storedValue, operation, previousValue);
     else
         result = previousValue
-console.log(result  )
     return result;
 }
 
 function addToExpression(value){
-    if(expression === 'Type your math'){
-        writeOutput(value);
-        return;
-    }
+    if(expression === 0) {writeOutput(value); return}
+    
     writeOutput(expression+(''+value));
 }
 
