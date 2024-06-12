@@ -15,38 +15,43 @@
             <div class="frame">
               <h1 class="output" id="output">0</h1>
 
-            <div class="buttons">
-                <button type="button" class="button" id="b-1" onclick="addToExpression(1)"> 
+              <div class="buttons">
+                <button type="button" class="button-func" id="b-c" onclick="writeOutput('0')"> 
+                  C</button>
+                <button type="button" class="button-func" id="b-del" style="grid-column-start: 2;" onclick="delFromExpression()"> 
+                  CE</button>
+                <button type="button" class="button-num" id="b-1" onclick="addToExpression(1)"> 
                   1</button>
-                <button type="button" class="button" id="b-2" style="grid-column-start: 2;" onclick="addToExpression(2)">
-                  2</button>
-                <button type="button" class="button" id="b-3" style="grid-column-start: 3;" onclick="addToExpression(3)">
-                  3</button>
-                <button type="button" class="button" id="b-4" style="grid-row-start: 2;" onclick="addToExpression(4)">
+                <button type="button" class="button-num" id="b-4" style="grid-row-start: 3;" onclick="addToExpression(4)">
                   4</button>
-                <button type="button" class="button" id="b-5"style="grid-row-start: 2;" onclick="addToExpression(5)">
+                  <button type="button" class="button-num" id="b-2" style="grid-column-start: 2;" onclick="addToExpression(2)">
+                  2</button>
+                <button type="button" class="button-num" id="b-5"style="grid-row-start: 3;" onclick="addToExpression(5)">
                   5</button>
-                <button type="button" class="button" id="b-6"style="grid-row-start: 2;" onclick="addToExpression(6)">
-                  6</button>
-                <button type="button" class="button" id="b-7" style="grid-column-start: 1; grid-row-start: 3;" onclick="addToExpression(7)">
+                  <button type="button" class="button-num" id="b-3" style="grid-row-start: 2;" onclick="addToExpression(3)">
+                  3</button>
+                <button type="button" class="button-num" id="b-6"style="grid-row-start: 3;" onclick="addToExpression(6)">
+                  6</button> 
+                <button type="button" class="button-num" id="b-7" style="grid-column-start: 1; grid-row-start: 4;" onclick="addToExpression(7)">
                   7</button>
-                <button type="button" class="button" id="b-8" style="grid-row-start: 3; grid-column-start: 2;" onclick="addToExpression(8)">
+                <button type="button" class="button-num" id="b-8" style="grid-row-start: 4; grid-column-start: 2;" onclick="addToExpression(8)">
                   8</button>
-                <button type="button" class="button" id="b-9" onclick="addToExpression(9)">
+                <button type="button" class="button-num" id="b-9" onclick="addToExpression(9)">
                   9</button>
-                <button type="button" class="button" id="b-0" style="grid-row-start: 4; grid-column-start: 2;" onclick="addToExpression(0)">
+                <button type="button" class="button-num" id="b-0" style="grid-row-start: 5; grid-column-start: 2;" onclick="addToExpression(0)">
                   0</button>
 
-                <button type="button" class="button" id="b-."style="grid-row-start: 4;" onClick="addToExpression('.')">
+                <button type="button" class="button-op" id="b-."style="grid-column-start: 4;" onClick="addToExpression('/')">
+                  ÷</button>
+                <button type="button" class="button-op" id="b-."style="grid-row-start: 5;" onClick="addToExpression('.')">
                   .</button>
-
-                <button type="button" class="button" id="b-x"style="grid-column-start: 4; background-color: rgb(255, 135, 55);" onclick="addToExpression('x')">
+                <button type="button" class="button-op" id="b-x"style="grid-column-start: 4;" onclick="addToExpression('x')">
                   x</button>
-                <button type="button" class="button" id="b--"style="grid-column-start: 4; background-color: rgb(255, 135, 55);" onclick="addToExpression('-')">
+                <button type="button" class="button-op" id="b--"style="grid-column-start: 4;" onclick="addToExpression('-')">
                   -</button>
-                <button type="button" class="button" id="b-+"style="grid-column-start: 4; background-color: rgb(255, 135, 55);" onclick="addToExpression('+')">
+                <button type="button" class="button-op" id="b-+"style="grid-column-start: 4;" onclick="addToExpression('+')">
                   +</button>
-                <button type="button" class="button" id="b-="style="grid-column-start: 4; background-color: rgb(255, 135, 55);" onclick="resolveExpression()">
+                <button type="button" class="button-op" id="b-="style="grid-column-start: 4;" onclick="resolveExpression()">
                   =</button>
               </div>
             </div>

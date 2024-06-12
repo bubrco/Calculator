@@ -5,18 +5,17 @@ function executeOperation(value1, operation, value2){
             case 'x':
                 return value1*value2;
                 
-                break;
             case '-':
                 return value1-value2;
                 
-                break;
             case '+':
                 return value1+value2;
                 
-                
-                break;
+            case '/':
+                return value1/value2;
+            
         }
-        throw new Error('Operation not availiable');
+    throw new Error('Operation not availiable');
 }
 
 function interpretExpression(exp){
@@ -25,7 +24,7 @@ function interpretExpression(exp){
     
     let previousValue, previousChar = NaN, storedValue;
     let operation = null;
-    let opIndex = 0, signal = 1;
+    let signal = 1;
     exprCharArr.forEach((char) => {
         if(!isNaN(char)){ // if it is a number
             if(!isNaN(previousChar)){ // if last char was a number
@@ -42,6 +41,7 @@ function interpretExpression(exp){
             
             return;
         } 
+        
         storedValue = previousValue;
         
         if(isNaN(previousChar)){ // first character is an operation
@@ -51,24 +51,17 @@ function interpretExpression(exp){
         }
 
         if(operation != null){   //reached a digit without finishing operation
-            previous = executeOperation(storedValue, operation, previousValue);
+            console.log(storedValue + " " + operation + ' ' + previousValue)
+            storedValue = executeOperation(storedValue, operation, previousValue);
             operation = null;
-            storedValue = 0;
+            previousValue = 0;console.log('cheguei em um digito mas n terminei, fiz: ' + storedValue + " antes:" + previousValue)
         } 
 
-        switch(char) {
-            case 'x':
-                operation = 'x'
-                break;
-            case '-':
-                operation = '-'
-                break;
-            case '+':
-                operation = '+'
-                break;
-        }
+        operation = char;
+
         previousValue = 0
         previousChar = char;
+        
 });
 
     if(operation != null)
@@ -88,6 +81,17 @@ function writeOutput(value){
     let output = document.getElementById("output");
     expression = value;
     output.innerHTML = value;
+}
+
+function delFromExpression(){
+    if(expression === 0) return;
+
+    let result
+    if(expression.length === 1) result = 0;
+    else
+    result = expression.slice(0,expression.length-1)
+   
+    writeOutput(result)
 }
 
 function resolveExpression(){
