@@ -1,4 +1,5 @@
 var expression = 0;
+let histCount = 0;
 
 function executeOperation(value1, operation, value2){
     switch(operation) {
@@ -101,6 +102,16 @@ function delFromExpression(){
 }
 
 function resolveExpression(){
-    writeOutput(interpretExpression(expression), true);   
+    writeOutput(interpretExpression(expression), true);
+    addToHist(expression)   
 }
 
+function addToHist(value){
+    histCount++;
+
+    var div = document.createElement("div");
+    div.id = 'expr-' + histCount
+    div.innerHTML = value;
+
+    document.getElementById("expressions").appendChild(div);
+}

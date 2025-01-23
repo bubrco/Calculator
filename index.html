@@ -11,7 +11,7 @@
   </head>
   <body style="background-color: rgb(222, 238, 240)">
     <main>
-        <div class="container">
+        <div class="container" id="calcContainer">
             <div class="frame">
               <h1 class="output" id="output">0</h1>
 
@@ -54,6 +54,15 @@
                 <button type="button" class="button-op" id="b-="style="grid-column-start: 4;" onclick="resolveExpression()">
                   =</button>
               </div>
+            </div>
+        </div>
+        <div class="container" id="history">
+            <div id="title_hist">
+              <h1 >History </h1>
+            </div>
+            <div class="flex-container" id="expressions">
+              <div id="exp-1"></div>
+              
             </div>
         </div>
     </main>
