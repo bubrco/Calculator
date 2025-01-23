@@ -9,14 +9,14 @@
     <link rel="icon" href="res/favicon.ico" type="image/x-icon">
     <script src="js/math.js"></script>
   </head>
-  <body style="background-color: #1f1206">
+  <body style="background-color: rgb(222, 238, 240)">
     <main>
         <div class="container">
             <div class="frame">
               <h1 class="output" id="output">0</h1>
 
               <div class="buttons">
-                <button type="button" class="button-func" id="b-c" onclick="writeOutput('0')"> 
+                <button type="button" class="button-func" id="b-c" onclick="writeOutput(0)"> 
                   C</button>
                 <button type="button" class="button-func" id="b-del" style="grid-column-start: 2;" onclick="delFromExpression()"> 
                   CE</button>
@@ -41,15 +41,15 @@
                 <button type="button" class="button-num" id="b-0" style="grid-row-start: 5; grid-column-start: 2;" onclick="addToExpression(0)">
                   0</button>
 
-                <button type="button" class="button-op" id="b-."style="grid-column-start: 4;" onClick="addToExpression('/')">
+                <button type="button" class="button-op" id="b-."style="grid-column-start: 4;" onClick="addToExpression('/',true)">
                   ÷</button>
-                <button type="button" class="button-op" id="b-."style="grid-row-start: 5;" onClick="addToExpression('.')">
+                <button type="button" class="button-op" id="b-."style="grid-row-start: 5;" onClick="addToExpression('.',true)">
                   .</button>
-                <button type="button" class="button-op" id="b-x"style="grid-column-start: 4;" onclick="addToExpression('x')">
+                <button type="button" class="button-op" id="b-x"style="grid-column-start: 4;" onclick="addToExpression('x',true)">
                   x</button>
-                <button type="button" class="button-op" id="b--"style="grid-column-start: 4;" onclick="addToExpression('-')">
+                <button type="button" class="button-op" id="b--"style="grid-column-start: 4;" onclick="addToExpression('-',false)">
                   -</button>
-                <button type="button" class="button-op" id="b-+"style="grid-column-start: 4;" onclick="addToExpression('+')">
+                <button type="button" class="button-op" id="b-+"style="grid-column-start: 4;" onclick="addToExpression('+',true)">
                   +</button>
                 <button type="button" class="button-op" id="b-="style="grid-column-start: 4;" onclick="resolveExpression()">
                   =</button>

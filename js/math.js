@@ -25,6 +25,7 @@ function interpretExpression(exp){
     let previousValue, previousChar = NaN, storedValue;
     let operation = null;
     let signal = 1;
+    
     exprCharArr.forEach((char) => {
         if(!isNaN(char)){ // if it is a number
             if(!isNaN(previousChar)){ // if last char was a number
@@ -71,15 +72,20 @@ function interpretExpression(exp){
     return result;
 }
 
-function addToExpression(value){
-    if(expression === 0) {writeOutput(value); return}
+function addToExpression(value, isExpr){
+    if(expression === 0 && !isExpr) {writeOutput(value); return}
     
     writeOutput(expression+(''+value));
 }
 
-function writeOutput(value){
+function writeOutput(value, isResolved){
     let output = document.getElementById("output");
     expression = value;
+    console.log(value)
+    if(isNaN(value)  && isResolved){
+        output.innerHTML = "Syntax Error"; 
+        setTimeout(function(){writeOutput(0)}, 500); return;
+    }
     output.innerHTML = value;
 }
 
@@ -95,6 +101,6 @@ function delFromExpression(){
 }
 
 function resolveExpression(){
-    writeOutput(interpretExpression(expression));   
+    writeOutput(interpretExpression(expression), true);   
 }
 
